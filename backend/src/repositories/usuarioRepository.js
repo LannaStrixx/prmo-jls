@@ -31,8 +31,21 @@ async function buscarPorId(id) {
     return resultado.rows[0];
 }
 
+async function atualizar(id, nome, email) {
+    const resultado = await db.query(
+        `UPDATE usuarios
+         SET nome = $1, email = $2
+         WHERE id = $3
+         RETURNING id, nome, email, created_at`,
+        [nome, email, id]
+    );
+
+    return resultado.rows[0];
+}
+
 module.exports = {
     buscarPorEmail,
     criar,
-    buscarPorId
+    buscarPorId,
+    atualizar
 };

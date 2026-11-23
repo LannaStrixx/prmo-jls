@@ -79,8 +79,31 @@ async function buscarPerfil(id) {
     return usuario;
 }
 
+
+async function atualizarPerfil(id, nome, email) {
+    if (!nome || !email) {
+        throw new Error('Nome e email são obrigatórios.');
+    }
+
+    nome = nome.trim();
+    email = email.trim().toLowerCase();
+
+    if (!nome || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        throw new Error('Informe um nome e um email válidos.');
+    }
+
+    const usuarioExistente = await usuarioRepository.buscarPorEmail(email);
+
+    if (usuarioExistente && usuarioExistente.id !== id) {
+        throw new Error('Este email já está cadastrado.');
+    }
+
+    return await usuarioRepository.atualizar(id, nome, email);
+}
+
 module.exports = {
     cadastrar,
     login,
-    buscarPerfil
+    buscarPerfil,
+    atualizarPerfil
 };

@@ -55,8 +55,35 @@ async function perfil(req, res) {
     }
 }
 
+
+async function atualizarPerfil(req, res) {
+    try {
+        const { nome, email } = req.body;
+
+        const usuario = await usuarioService.atualizarPerfil(
+            req.usuario.id,
+            nome,
+            email
+        );
+
+        return res.status(200).json({
+            mensagem: 'Perfil atualizado com sucesso!',
+            usuario
+        });
+
+    } catch (error) {
+        const status = error.message === 'Este email já está cadastrado.' ? 409 : 400;
+
+        return res.status(status).json({
+            erro: error.message
+        });
+    }
+}
+
+
 module.exports = {
     cadastrar,
     login,
-    perfil
+    perfil,
+    atualizarPerfil
 };
