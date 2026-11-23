@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | Favoritos</title>
+    <link rel="stylesheet" href="../css/favoritos.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="catalogo.html" class="logo">CineMatch</a>
+
+        <nav>
+            <a href="catalogo.html">Início</a>
+            <a href="favoritos.html" class="ativo">Favoritos</a>
+            <a href="minhaLista.html">Minha lista</a>
+            <a href="perfil.html">Perfil</a>
+        </nav>
+
+        <button id="botaoSair">Sair</button>
+    </header>
+
+    <main class="container">
+        <section class="titulo-secao">
+            <h1>Meus favoritos</h1>
+            <p>Seus filmes preferidos reunidos em um só lugar.</p>
+        </section>
+
+        <section id="listaFavoritos" class="lista-filmes">
+            <p>Carregando favoritos...</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CineMatch. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../script/api.js"></script>
+    <script src="../script/favoritos.js"></script>
+</body>
+</html>
