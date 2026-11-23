@@ -1,0 +1,237 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #101014;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    min-height: 75px;
+    padding: 15px 5%;
+    background: #18181f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #c4c4cc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.ativo {
+    color: #ffffff;
+}
+
+#botaoSair {
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+/* Filme em destaque */
+
+.destaque {
+    min-height: 430px;
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #101014 10%, rgba(16,16,20,0.75) 55%, rgba(16,16,20,0.2)),
+        linear-gradient(0deg, #101014, transparent);
+    background-size: cover;
+    background-position: center;
+}
+
+.conteudo-destaque {
+    max-width: 600px;
+}
+
+.etiqueta {
+    color: #e50914;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.conteudo-destaque h1 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.conteudo-destaque p {
+    color: #d0d0d5;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+#botaoDetalhes {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 13px 24px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Catálogo */
+
+.catalogo {
+    padding: 35px 5%;
+}
+
+.titulo-secao h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.titulo-secao p {
+    color: #a5a5ad;
+}
+
+.filtros {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.filtros input,
+.filtros select {
+    background: #202029;
+    border: 1px solid #41414d;
+    border-radius: 6px;
+    color: white;
+    padding: 13px;
+    font-size: 15px;
+}
+
+.filtros input {
+    flex: 1;
+}
+
+.filtros select {
+    min-width: 190px;
+}
+
+.lista-filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 25px;
+}
+
+.filme {
+    background: #1c1c24;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.filme:hover {
+    transform: translateY(-6px);
+}
+
+.filme img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.filme-info {
+    padding: 13px;
+}
+
+.filme-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.filme-info p {
+    color: #aaaab3;
+    font-size: 13px;
+}
+
+.sem-filmes {
+    color: #aaaab3;
+    grid-column: 1 / -1;
+    padding: 25px 0;
+}
+
+/* Rodapé */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #777780;
+    background: #18181f;
+}
+
+/* Responsividade */
+
+@media (max-width: 700px) {
+    .cabecalho {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .destaque {
+        min-height: 350px;
+        padding: 40px 6%;
+    }
+
+    .conteudo-destaque h1 {
+        font-size: 32px;
+    }
+
+    .filtros {
+        flex-direction: column;
+    }
+
+    .filtros select {
+        width: 100%;
+    }
+
+    .lista-filmes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .filme img {
+        height: 220px;
+    }
+}

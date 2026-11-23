@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | Catálogo</title>
+    <link rel="stylesheet" href="../css/catalogo.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="catalogo.html" class="logo">CineMatch</a>
+
+        <nav>
+            <a href="catalogo.html" class="ativo">Início</a>
+            <a href="favoritos.html">Favoritos</a>
+            <a href="minhaLista.html">Minha lista</a>
+            <a href="perfil.html">Perfil</a>
+        </nav>
+
+        <button id="botaoSair">Sair</button>
+    </header>
+
+    <main>
+        <section class="destaque" id="destaque">
+            <div class="conteudo-destaque">
+                <span class="etiqueta">DESTAQUE</span>
+                <h1 id="tituloDestaque">Carregando...</h1>
+                <p id="sinopseDestaque">Buscando filmes para você.</p>
+                <button id="botaoDetalhes">Ver detalhes</button>
+            </div>
+        </section>
+
+        <section class="catalogo">
+            <div class="titulo-secao">
+                <h2>Explore filmes</h2>
+                <p>Encontre seu próximo filme favorito.</p>
+            </div>
+
+            <div class="filtros">
+                <input
+                    type="search"
+                    id="campoPesquisa"
+                    placeholder="Pesquisar filme..."
+                >
+
+                <select id="filtroGenero">
+                    <option value="">Todos os gêneros</option>
+                </select>
+            </div>
+
+            <div id="listaFilmes" class="lista-filmes">
+                <p>Carregando filmes...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CineMatch. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../script/api.js"></script>
+    <script src="../script/catalogo.js"></script>
+</body>
+</html>
