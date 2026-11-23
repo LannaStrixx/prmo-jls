@@ -8,10 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rotas
+// Importação das rotas
 const usuarioRoutes = require('./routes/usuarioRoutes');
+const filmeRoutes = require('./routes/filmeRoutes');
 
+// Rotas da API
 app.use('/api/usuarios', usuarioRoutes);
+app.use('/api/filmes', filmeRoutes);
 
 // Rota inicial
 app.get('/', (req, res) => {
@@ -21,7 +24,7 @@ app.get('/', (req, res) => {
     });
 });
 
-// Rota de teste
+// Rota de status
 app.get('/api/status', (req, res) => {
     res.json({
         projeto: 'CineMatch',
@@ -29,7 +32,7 @@ app.get('/api/status', (req, res) => {
     });
 });
 
-// Inicialização
+// Inicialização do servidor
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
