@@ -4,8 +4,14 @@ require('dotenv').config();
 
 const app = express();
 
+// Middlewares globais
 app.use(cors());
 app.use(express.json());
+
+// Rotas
+const usuarioRoutes = require('./routes/usuarioRoutes');
+
+app.use('/api/usuarios', usuarioRoutes);
 
 // Rota inicial
 app.get('/', (req, res) => {
@@ -23,6 +29,7 @@ app.get('/api/status', (req, res) => {
     });
 });
 
+// Inicialização
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
