@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | Meu Perfil</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="catalogo.html" class="logo">CineMatch</a>
+
+        <nav>
+            <a href="catalogo.html">Início</a>
+            <a href="favoritos.html">Favoritos</a>
+            <a href="minhaLista.html">Minha lista</a>
+            <a href="perfil.html" class="ativo">Perfil</a>
+        </nav>
+
+        <button id="botaoSair">Sair</button>
+    </header>
+
+    <main class="container">
+        <section class="perfil">
+            <h1>Meu perfil</h1>
+            <p>Consulte e atualize suas informações.</p>
+
+            <form id="formPerfil">
+                <label for="nome">Nome</label>
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Seu nome"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Seu email"
+                    required
+                >
+
+                <button type="submit">Salvar alterações</button>
+
+                <p id="mensagem"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CineMatch. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../script/api.js"></script>
+    <script src="../script/perfil.js"></script>
+</body>
+</html>
