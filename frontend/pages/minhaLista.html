@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista | CineMatch</title>
+    <link rel="stylesheet" href="../css/minhaLista.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>CineMatch</h1>
+
+        <nav>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="favoritos.html">Favoritos</a>
+            <a href="minhaLista.html" class="ativo">Minha Lista</a>
+            <a href="perfil.html">Perfil</a>
+            <button id="botaoSair">Sair</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="introducao">
+            <h2>Minha Lista</h2>
+            <p>Seus filmes favoritos reunidos em um só lugar.</p>
+        </section>
+
+        <section id="listaFilmes" class="grid-filmes">
+            <p class="carregando">Carregando sua lista...</p>
+        </section>
+    </main>
+
+    <script src="../script/api.js"></script>
+    <script src="../script/minhaLista.js"></script>
+</body>
+</html>
