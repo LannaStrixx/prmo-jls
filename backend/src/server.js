@@ -4,7 +4,30 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+// Configuração de CORS
+app.use((req, res, next) => {
+    res.header(
+        'Access-Control-Allow-Origin',
+        'https://cinematch-web-bice.vercel.app'
+    );
+
+    res.header(
+        'Access-Control-Allow-Methods',
+        'GET, POST, PUT, DELETE, OPTIONS'
+    );
+
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Content-Type, Authorization'
+    );
+
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(204);
+    }
+
+    next();
+});
+
 app.use(express.json());
 
 
@@ -37,6 +60,11 @@ app.get('/api/status', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log(`Servidor CineMatch rodando na porta ${PORT}`);
-});
+
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Servidor CineMatch rodando na porta ${PORT}`);
+    });
+}
+
+module.exports = app;
